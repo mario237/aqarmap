@@ -7,7 +7,7 @@
 @endsection
 
 @section('content')
-    @include('front.includes.main_image')
+    @include('front.includes.main-image')
 
     <div class="container mt-new-seaction">
         <div class="row">
