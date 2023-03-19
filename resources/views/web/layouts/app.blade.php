@@ -5,21 +5,21 @@
     <title>@yield('title' , config('app.name'))</title>
 
 
-    @include('front.includes.meta')
+    @include('web.includes.meta')
 
 
-    @include('front.includes.styles')
+    @include('web.includes.styles')
 </head>
 <body class="rtl">
     <main>
-        @include('front.includes.header')
+        @include('web.includes.header')
         @yield('content')
     </main>
 
-    @include('front.includes.footer')
+    @include('web.includes.footer')
     <!-- scripts -->
 
-    @include('front.includes.scripts')
+    @include('web.includes.scripts')
 </body>
 
 </html>

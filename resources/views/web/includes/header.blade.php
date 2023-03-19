@@ -207,16 +207,27 @@
                         class="collapse time-circle-trigger simple-navbar__dropdown-menu simple-navbar__dropdown-menu_desktop-user-control simple-navbar__dropdown-menu_dir-reverse p-0"
                         id="userControlCollapse">
                         <div class="menu-content menu-content__header">
-                            <h3 class="menu-content__title pb-3">تسجيل دخول</h3>
+                            @if(Auth::check())
+                                <h3 class="menu-content__title pb-3">{{ Auth::user()->name }}</h3>
 
-                            <a class="icon-btn simple-navbar__action-btn simple-navbar__action-btn_blue-btn" href="#"
-                               rel="nofollow">
-                                تسجيل دخول
-                            </a>
-                            <a class="icon-btn simple-navbar__action-btn simple-navbar__action-btn_gray-btn" href="#"
-                               rel="nofollow">
-                                تسجيل حساب
-                            </a>
+                                <a class="icon-btn simple-navbar__action-btn simple-navbar__action-btn_blue-btn" href="#" rel="nofollow"
+                                   onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
+                                    تسجيل خروج
+                                </a>
+                                <form method="POST" id="logout-form" action="{{ route('logout') }}">
+                                    @csrf
+                                </form>
+                            @else
+                                <h3 class="menu-content__title pb-3">تسجيل دخول</h3>
+                                <a class="icon-btn simple-navbar__action-btn simple-navbar__action-btn_blue-btn" href="{{ route('login') }}"
+                                   rel="nofollow">
+                                    تسجيل دخول
+                                </a>
+                                <a class="icon-btn simple-navbar__action-btn simple-navbar__action-btn_gray-btn" href="{{ route('register') }}"
+                                   rel="nofollow">
+                                    تسجيل حساب
+                                </a>
+                            @endif
                         </div>
                     </div>
                 </li>

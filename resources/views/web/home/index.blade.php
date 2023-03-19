@@ -1,4 +1,4 @@
-@extends('layouts.app')
+@extends('web.layouts.app')
 
 @section('title', 'عقارماب | إبحث عن عقارات للبيع وللايجار بالتقسيط او كاش في مصر')
 
@@ -7,7 +7,7 @@
 @endsection
 
 @section('content')
-    @include('front.includes.main-image')
+    @include('web.includes.main-image')
 
     <div class="container mt-new-seaction">
         <div class="row">
